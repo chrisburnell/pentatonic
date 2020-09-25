@@ -5,7 +5,7 @@ let getFrequencyFromKeys = (key = 49) => {
 ////
 /// Pentatonic
 /// Pass in an array of numbers ranging from 0 to 12.
-/// Starts on  C♯3 / D♭3 by default.
+/// Starts on C♯3 / D♭3 by default.
 /// https://en.wikipedia.org/wiki/Pentatonic_scale
 ///
 /// @author Jeremy Keith <@adactio>
@@ -15,8 +15,9 @@ let getFrequencyFromKeys = (key = 49) => {
 /// Licensed under a CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
 /// http://creativecommons.org/publicdomain/zero/1.0/
 ////
-let pentatonic = (target, duration = 4000, volume = 0.5, keyStart = 29, keyIntervals = [2, 3, 2, 2, 3], keyLimit = 12) => {
-    if ((!window.AudioContext && !window.webkitAudioContext) || !target.getAttribute("data-values")){
+let isPlaying = false;
+let pentatonic = (notes, duration = 4000, volume = 0.5, keyStart = 29, keyIntervals = [2, 3, 2, 2, 3], keyLimit = 12) => {
+    if ((!window.AudioContext && !window.webkitAudioContext) || !notes || isPlaying){
         return;
     }
     let frequencies = [getFrequencyFromKeys(keyStart)];
@@ -26,7 +27,6 @@ let pentatonic = (target, duration = 4000, volume = 0.5, keyStart = 29, keyInter
         frequencies.push(getFrequencyFromKeys(keyStart + keyInterval));
     }
     let note = 0;
-    let notes = target.getAttribute("data-values").split(",")
     let noteLength = Math.floor(duration / notes.length);
     let output = new (window.AudioContext || window.webkitAudioContext)();
     let instrument = output.createOscillator();
@@ -54,8 +54,8 @@ let pentatonic = (target, duration = 4000, volume = 0.5, keyStart = 29, keyInter
     // Start playing notes!
     playNotes();
     // And prevent the user from blowing their ears up by stacking sounds
-    target.style.pointerEvents = "none";
+    isPlaying = true;
     window.setTimeout(() => {
-        target.style.pointerEvents = "auto";
+        isPlaying = false;
     }, duration);
 };
