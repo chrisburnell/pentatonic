@@ -16,7 +16,7 @@ let getFrequencyFromKeys = (key = 49) => {
 /// http://creativecommons.org/publicdomain/zero/1.0/
 ////
 let isPlaying = false;
-let pentatonic = (notes, duration = 4000, volume = 0.5, keyStart = 29, keyIntervals = [2, 3, 2, 2, 3], keyLimit = 12) => {
+let pentatonic = (notes, duration = 4000, volume = 0.5, keyStart = 29, keyIntervals = [2, 2, 3, 2, 3], keyLimit = 12) => {
     if ((!window.AudioContext && !window.webkitAudioContext) || !notes || isPlaying){
         return;
     }
