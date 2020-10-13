@@ -1,6 +1,6 @@
 {
   "name": "@chrisburnell/pentatonic",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Turn any array of integers into a fun little melody.",
   "main": "pentatonic.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "license": "CC0",
   "author": "Chris Burnell",
-  "homepage": "https://github.com/chrisburnell/penatonic#readme",
+  "homepage": "https://github.com/chrisburnell/pentatonic",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/chrisburnell/pentatonic.git"

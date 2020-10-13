@@ -24,7 +24,7 @@ No, but really though, there’s no serious reason for this. It’s just fun.
 ```js
 for (let target of document.querySelectorAll(".pentatonic")) {
     target.addEventListener("click", () => {
-        pentatonic(target.getAttribute("data-values").split(","));
+        pentatonic(target.dataset.values.split(","));
     });
 }
 ```
