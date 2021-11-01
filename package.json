@@ -1,6 +1,6 @@
 {
   "name": "@chrisburnell/pentatonic",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Turn any array of integers into a fun little melody.",
   "main": "pentatonic.js",
   "scripts": {

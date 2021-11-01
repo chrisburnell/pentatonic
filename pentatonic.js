@@ -33,7 +33,7 @@ let pentatonic = (notes, duration = 4000, volume = 0.5, keyStart = 29, keyInterv
     let amplifier = output.createGain();
     let playNotes = () => {
         if (note < notes.length) {
-            instrument.frequency.value = frequencies[notes[note]];
+            instrument.frequency.value = frequencies[Math.min(keyLimit, notes[note])];
             note = note + 1;
         }
         else {
