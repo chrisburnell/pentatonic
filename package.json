@@ -1,24 +1,23 @@
 {
   "name": "@chrisburnell/pentatonic",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Turn any array of integers into a fun little melody.",
-  "main": "pentatonic.js",
-  "scripts": {
-    "test": "eslint pentatonic.js"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "eslint": "^8.7.0"
-  },
-  "license": "CC0",
   "author": "Chris Burnell",
-  "homepage": "https://github.com/chrisburnell/pentatonic",
+  "license": "CC0",
+  "homepage": "https://chrisburnell.com/pentatonic/",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/chrisburnell/pentatonic.git"
   },
   "bugs": {
     "url": "https://github.com/chrisburnell/pentatonic/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0"
+  },
+  "main": "pentatonic.js",
+  "scripts": {
+    "test": "eslint pentatonic.js"
   },
   "keywords": [
     "js",
