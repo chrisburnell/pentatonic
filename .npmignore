@@ -2,4 +2,4 @@
 .vscode
 .editorconfig
 .eslintrc.json
-.prettier
+.prettierrc
