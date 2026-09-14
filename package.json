@@ -1,6 +1,6 @@
 {
   "name": "@chrisburnell/pentatonic",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Turn any array of integers into a fun little melody.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "license": "CC0",
@@ -10,6 +10,10 @@
   },
   "bugs": {
     "url": "https://github.com/chrisburnell/pentatonic/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "keywords": [
     "audio",
