@@ -19,17 +19,24 @@ No, but really though, there’s no serious reason for this. It’s just fun.
 
 ## Usage
 
-_pentatonic.js_ gives you a function, `pentatonic()` to use, like so:
+_pentatonic.js_ gives you a class, `Pentatonic`, to use, like so:
 
 ```js
+const pentatonic = new Pentatonic();
+
 for (let target of document.querySelectorAll(".pentatonic")) {
     target.addEventListener("click", () => {
-        pentatonic(target.dataset.values.split(","))
+        pentatonic.play(target.dataset.values.split(","))
     })
 }
 ```
 
-The function takes six parameters:
+> [!NOTE]
+> As of v2.0.0, Pentatonic is a class rather than a bare function, so a call
+> like `pentatonic(values)` becomes `new Pentatonic().play(values)`. Reuse a
+> single instance across calls, since it shares one `AudioContext`.
+
+The `play()` method takes six parameters:
 
 0. `notes` — an array of positive integers _(required)_
 1. `duration` — the length of time to play the audio for, represented in milliseconds _(default = 4000)_
